@@ -22,8 +22,8 @@
   path = CMEPS-interface/CMEPS
   #url = https://github.com/NOAA-EMC/CMEPS
   #branch = emc/develop
-  url = https://github.com/DusanJovic-NOAA/CMEPS
-  branch = ufs_tracing
+  url = https://github.com/dpsarmie/CMEPS
+  branch = ufs_tracing_RH_combo
 [submodule "HYCOM"]
   path = HYCOM-interface/HYCOM
   url = https://github.com/NOAA-EMC/HYCOM-src

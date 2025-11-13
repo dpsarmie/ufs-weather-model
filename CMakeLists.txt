@@ -81,7 +81,7 @@ set(PDLIB           OFF CACHE BOOL "Enable Domain Decomposition in WW3 via PDLIB
 set(PDLIB_BT4       OFF CACHE BOOL "Enable Domain Decomposition in WW3 via PDLIB with BT4")
 set(CDEPS_INLINE    OFF CACHE BOOL "Enable CDEPS inline capability")
 set(HYDRO           OFF CACHE BOOL "Enable hydrostatic set")
-set(UFS_TRACING     OFF CACHE BOOL "Enable UFS Tracing")
+set(UFS_TRACING     ON  CACHE BOOL "Enable UFS Tracing")
 
 set(CMAKE_Platform $ENV{CMAKE_Platform})
 if(CMAKE_Platform)
