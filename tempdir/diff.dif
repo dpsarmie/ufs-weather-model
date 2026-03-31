@@ -1,0 +1,310 @@
+5c5
+<   ccpp_suite = 'FV3_GFS_v17_p8_ugwpv1'
+---
+>   ccpp_suite = 'FV3_GFS_v17_p8'
+10c10
+<   max_output_fields = 300
+---
+>   max_output_fields = 310
+15c15
+<   domains_stack_size = 16000000
+---
+>   domains_stack_size = 8000000
+24c24
+<   layout = 12,12
+---
+>   layout = 4,8
+26,27c26,27
+<   npx = 385
+<   npy = 385
+---
+>   npx = 97
+>   npy = 97
+33c33
+<   make_nh = .false.
+---
+>   make_nh = .true.
+38c38
+<   nudge_qv = .false.
+---
+>   nudge_qv = .true.
+40c40
+<   tau = 4.0
+---
+>   tau = 0.0
+42c42
+<   rf_cutoff = 300.0
+---
+>   rf_cutoff = 10.
+52c52
+<   pass_full_omega_to_physics_in_non_hydrostatic_mode = .true.
+---
+>   pass_full_omega_to_physics_in_non_hydrostatic_mode = .false.
+57c57
+<   n_split = 4
+---
+>   n_split = 5
+59c59
+<   na_init = 0
+---
+>   na_init = 1
+62c62
+<   fv_sg_adj = 900
+---
+>   fv_sg_adj = 450
+71c71
+<   external_ic = .false.
+---
+>   external_ic = .true.
+74,75c74,75
+<   nggps_ic = .false.
+<   mountain = .true.
+---
+>   nggps_ic = .true.
+>   mountain = .false.
+83c83
+<   adjust_dry_mass = .true.
+---
+>   adjust_dry_mass = .false.
+91c91
+<   warm_start = .true.
+---
+>   warm_start = .false.
+95,96c95,96
+<   read_increment = .true.
+<   res_latlon_dynamics = increment.atm.i006.nc
+---
+>   read_increment = .false.
+>   res_latlon_dynamics = ''
+123c123
+<   lradar       = .true.
+---
+>   lradar       = .false.
+125c125
+<   dt_inner     = 300
+---
+>   dt_inner     = 720
+143,144c143,144
+<   do_ugwp_v0   = .false.
+<   do_ugwp_v1   = .true.
+---
+>   do_ugwp_v0   = .true.
+>   do_ugwp_v1   = .false.
+147,149c147,149
+<   do_gsl_drag_ls_bl    = .true.
+<   do_gsl_drag_ss       = .false.
+<   do_gwd_opt_psl       = .true.
+---
+>   do_gsl_drag_ls_bl    = .false.
+>   do_gsl_drag_ss       = .true.
+>   do_gwd_opt_psl       = .false.
+151c151
+<   do_gsl_drag_tofd     = .true.
+---
+>   do_gsl_drag_tofd     = .false.
+161c161
+<   iaer         = 2011
+---
+>   iaer         = 1011
+182c182
+<   xr_cnvcld    = .true.
+---
+>   xr_cnvcld    = .false.
+185c185
+<   progsigma    = .true.
+---
+>   progsigma    = .false.
+190c190
+<   cdmbgwd      = 5.0,5.0,1.0,1.0
+---
+>   cdmbgwd      = 0.14,1.8,1.0,1.0
+218c218
+<   fscav_aero   = '*:0.3','so2:0.0','msa:0.0','dms:0.0','nh3:0.4','nh4:0.6','bc1:0.6','bc2:0.6','oc1:0.4','oc2:0.4','dust1:0.6','dust2:0.6', 'dust3:0.6','dust4:0.6','dust5:0.6','seas1:0.5','seas2:0.5','seas3:0.5','seas4:0.5','seas5:0.5'
+---
+>   fscav_aero   = "*:0.3","so2:0.0","msa:0.0","dms:0.0","nh3:0.4","nh4:0.6","bc1:0.6","bc2:0.6","oc1:0.4","oc2:0.4","dust1:0.6","dust2:0.6","dust3:0.6","dust4:0.6","dust5:0.6","seas1:0.5","seas2:0.5","seas3:0.5","seas4:0.5","seas5:0.5"
+230c230
+<   doGP_lwscat        = .false.
+---
+>   doGP_lwscat        = .true.
+255c255
+<   iseed_ca     = 955274220
+---
+>   iseed_ca     = 12345
+262,266c262,266
+< ! iaufhrs      = 6,
+< ! iau_delthrs  = 6
+< ! iau_inc_files= ''
+< ! iau_drymassfixer = .false.
+< ! iau_filter_increments = .false.
+---
+>   iaufhrs      = -1
+>   iau_delthrs  = 0
+>   iau_inc_files= ''
+>   iau_drymassfixer = .false.
+>   iau_filter_increments = .false.
+271,280c271,280
+< ! land_iau_fhrs = 6,
+< ! land_iau_delthrs = 6
+< ! land_iau_inc_files = 'sfc_inc',''
+< ! lsoil_incr = 2
+< ! land_iau_filter_increments = .false.
+< ! land_iau_upd_stc = .true.
+< ! land_iau_upd_slc = .true.
+< ! land_iau_do_stcsmc_adjustment = .true.
+< ! land_iau_min_T_increment = 0.0001
+< ! land_iau_min_SLC_increment = 0.000001
+---
+>   land_iau_fhrs = 3,6,9
+>   land_iau_delthrs = 6
+>   land_iau_inc_files = 'sfc_inc',''
+>   lsoil_incr = 3
+>   land_iau_filter_increments = .false.
+>   land_iau_upd_stc = .true.
+>   land_iau_upd_slc = .true.
+>   land_iau_do_stcsmc_adjustment = .true.
+>   land_iau_min_T_increment = 0.0001
+>   land_iau_min_SLC_increment = 0.000001
+292,294c292,294
+<   knob_ugwp_dokdis   = 2
+<   knob_ugwp_ndx4lh   = 4
+<   knob_ugwp_version  = 1
+---
+>   knob_ugwp_dokdis   = 1
+>   knob_ugwp_ndx4lh   = 1
+>   knob_ugwp_version  = 0
+296c296
+< ! launch_level      = 54
+---
+>   launch_level      = 54
+298,306c298,306
+<   knob_ugwp_palaunch = 275.0e2
+<   knob_ugwp_nslope   = 1
+<   knob_ugwp_lzmax    = 15.750e3
+<   knob_ugwp_lzmin    = 0.75e3
+<   knob_ugwp_lzstar   = 2.0e3
+<   knob_ugwp_taumin   = 0.25e-3
+<   knob_ugwp_tauamp   = 0.8e-3
+<   knob_ugwp_lhmet    = 200.0e3
+<   knob_ugwp_orosolv  = 'pss-1986'
+---
+> ! knob_ugwp_palaunch = 275.0e2
+> ! knob_ugwp_nslope   = 1
+> ! knob_ugwp_lzmax    = 15.750e3
+> ! knob_ugwp_lzmin    = 0.75e3
+> ! knob_ugwp_lzstar   = 2.0e3
+> ! knob_ugwp_taumin   = 0.25e-3
+> ! knob_ugwp_tauamp   = 3.0e-3
+> ! knob_ugwp_lhmet    = 200.0e3
+> ! knob_ugwp_orosolv  = 'pss-1986'
+364,367c364,367
+<   FNGLAC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/global_glacier.2x2.grb'
+<   FNMXIC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/global_maxice.2x2.grb'
+<   FNTSFC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/RTGSST.1982.2012.monthly.clim.grb'
+<   FNSNOC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/global_snoclim.1.875.grb'
+---
+>   FNGLAC   = 'global_glacier.2x2.grb'
+>   FNMXIC   = 'global_maxice.2x2.grb'
+>   FNTSFC   = 'RTGSST.1982.2012.monthly.clim.grb'
+>   FNSNOC   = 'global_snoclim.1.875.grb'
+369,378c369,378
+<   FNALBC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.snowfree_albedo.tileX.nc'
+<   FNALBC2  = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.facsf.tileX.nc'
+<   FNAISC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/IMS-NIC.blended.ice.monthly.clim.grb'
+<   FNTG3C   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.substrate_temperature.tileX.nc'
+<   FNVEGC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.vegetation_greenness.tileX.nc'
+<   FNVETC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.vegetation_type.tileX.nc'
+<   FNSOTC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.soil_type.tileX.nc'
+<   FNSOCC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.soil_color.tileX.nc'
+<   FNSMCC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/global_soilmgldas.statsgo.t766.1536.768.grb'
+<   FNMSKH   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/am/global_slmask.t1534.3072.1536.grb'
+---
+>   FNALBC   = 'C96.snowfree_albedo.tileX.nc'
+>   FNALBC2  = 'C96.facsf.tileX.nc'
+>   FNAISC   = 'IMS-NIC.blended.ice.monthly.clim.grb'
+>   FNTG3C   = 'C96.substrate_temperature.tileX.nc'
+>   FNVEGC   = 'C96.vegetation_greenness.tileX.nc'
+>   FNVETC   = 'C96.vegetation_type.tileX.nc'
+>   FNSOTC   = 'C96.soil_type.tileX.nc'
+>   FNSOCC   = 'C96.soil_color.tileX.nc'
+>   FNSMCC   = 'global_soilmgldas.statsgo.t1534.3072.1536.grb'
+>   FNMSKH   = 'global_slmask.t1534.3072.1536.grb'
+382,385c382,385
+<   FNVMNC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.vegetation_greenness.tileX.nc'
+<   FNVMXC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.vegetation_greenness.tileX.nc'
+<   FNSLPC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.slope_type.tileX.nc'
+<   FNABSC   = '/lfs/h2/emc/ens/noscrub/li.pan/emistest/gcafs1217/fix/orog/C384/sfc/C384.mx025.maximum_snow_albedo.tileX.nc'
+---
+>   FNVMNC   = 'C96.vegetation_greenness.tileX.nc'
+>   FNVMXC   = 'C96.vegetation_greenness.tileX.nc'
+>   FNSLPC   = 'C96.slope_type.tileX.nc'
+>   FNABSC   = 'C96.maximum_snow_albedo.tileX.nc'
+414c414
+<   skeb = 0
+---
+>   skeb = -999.
+416,420c416,420
+<   skeb_tau = -999.
+<   skeb_lscale = -999.
+<   skebnorm = 1
+<   skeb_npass = 30
+<   skeb_vdof = 5
+---
+>   skeb_tau = 21600,
+>   skeb_lscale = 250000,
+>   skebnorm = 0,
+>   skeb_npass = 30,
+>   skeb_vdof = 5,
+423,425c423,425
+<   iseed_shum = 0
+<   shum_tau = -999.
+<   shum_lscale = -999.
+---
+>   iseed_shum = 1,
+>   shum_tau = 21600,
+>   shum_lscale = 500000,
+428,432c428,432
+<   iseed_sppt = 0
+<   sppt_tau = -999.
+<   sppt_lscale = -999.
+<   sppt_logit = .true.
+<   sppt_sfclimit = .true.
+---
+>   iseed_sppt = 20210325000103
+>   sppt_tau = 2.16E4
+>   sppt_lscale = 500.E3
+>   sppt_logit = .true.,
+>   sppt_sfclimit = .true.,
+436,443c436,443
+<   OCNSPPT = 0.8,0.4,0.2,0.08,0.04
+<   OCNSPPT_LSCALE = 500.E3,1000.E3,2000.E3,2000.E3,2000.E3
+<   OCNSPPT_TAU = 2.16E4,2.592E5,2.592E6,7.776E6,3.1536E7
+<   ISEED_OCNSPPT =0
+<   EPBL = 0.8,0.4,0.2,0.08,0.04
+<   EPBL_LSCALE = 500.E3,1000.E3,2000.E3,2000.E3,2000.E3
+<   EPBL_TAU = 2.16E4,2.592E5,2.592E6,7.776E6,3.1536E7
+<   ISEED_EPBL = 0
+---
+>   OCNSPPT = -999.
+>   OCNSPPT_LSCALE = 500.E3
+>   OCNSPPT_TAU = 2.16E4
+>   ISEED_OCNSPPT =20210325000108
+>   EPBL = -999.
+>   EPBL_LSCALE = 500.E3
+>   EPBL_TAU = 2.16E4
+>   ISEED_EPBL = 20210325000113
+449,451c449,451
+<   LNDP_TAU=21600
+<   LNDP_LSCALE=500000
+<   ISEED_LNDP=0
+---
+>   LNDP_TAU=21600,
+>   LNDP_LSCALE=500000,
+>   ISEED_LNDP=2010,
+457c457
+<   output_directory = 'MOM6_OUTPUT/',
+---
+>   output_directory = './MOM6_OUTPUT',
+460c460
+<   restart_output_dir = 'MOM6_RESTART/'
+---
+>   restart_output_dir = './RESTART/'
