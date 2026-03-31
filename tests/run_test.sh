@@ -159,8 +159,8 @@ else
   export HIDE_UGWPV1='!'
 fi
 
-# Set IAU Global workflow related tags to ' '
-if [[ ${GFSv17opn} == .true. ]] ; then
+# Set IAU Global workflow related tags
+if [[ ${GFSv17opn} == .true. ]] || [[ ${GCAFSv1opn} == .true. ]]; then
     export HIDE_AIAU=' '
     export HIDE_LIAU='!'
 else

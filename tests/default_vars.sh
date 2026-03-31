@@ -9,8 +9,8 @@
 
 THRD=1
 
-export INPES_atmaero=4
-export JNPES_atmaero=8
+export INPES_atmaero=12
+export JNPES_atmaero=12
 export WPG_atmaero=6
 
 export THRD_cpl_atmw=1
@@ -131,6 +131,7 @@ export BMIC=.false.
 
 export GFSv17opn=.false.
 export SFS=.false.
+export GCAFSv1opn=.false.
 
 export EXCLUSIVE_NODES=.false.
 
