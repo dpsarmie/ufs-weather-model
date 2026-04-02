@@ -50,6 +50,7 @@ export LIST_FILES="sfcf000.nc \
                    RESTART/20210323.060000.sfc_data.tile5.nc \
                    RESTART/20210323.060000.sfc_data.tile6.nc"
 
+export ATMRES=C384
 export_fv3
 export_tiled
 export GCAFSv1opn=.true.
@@ -109,7 +110,7 @@ export UPDATE_FULL_OMEGA=.true.
 export N_SPLIT=4
 export NA_INIT=0
 export FV_SG_ADJ=900
-export EXTERNAL_IC=.true.
+export EXTERNAL_IC=.false.
 export NGGPS_IC=.false.
 export MOUNTAIN=.true.
 export ADJUST_DRY_MASS=.true.
@@ -130,7 +131,7 @@ export XR_CNVCLD=.true.
 export GWD_OPT=2
 export DO_UGWP_V1=.true.
 export KNOB_UGWP_DOKDIS=2
-export KNOB_UGWP_NDX41H=4
+export KNOB_UGWP_NDX4LH=4
 export KNOB_UGWP_VERSION=1
 export KNOB_UGWP_NSLOPE=1
 export DO_UGWP_V0=.false.
@@ -141,6 +142,7 @@ export DO_GSL_DRAG_TOFD=.true.
 export DO_UGWP_V1_OROG_ONLY=.false.
 export DO_UGWP_V0_NST_ONLY=.false.
 export LDIAG_UGWP=.false.
+export KNOB_UGWP_TAUAMP=0.8e-3
 
 export PROGSIGMA=.true.
 export CDMBGWD='5.0,5.0,1.0,1.0'
@@ -160,25 +162,9 @@ export NFRACSEED=0.5
 export CA_TRIGGER=.true.
 export NSPINUP=1
 export ISEED_CA=955274220
-export DOGP_LWSCAT=.false.
-export HIDE_LIAU='!'
+export DOGP_LWSCAT=.true.
 
 export TILEDFIX=.true.
-export FNALBC="'C96.snowfree_albedo.tileX.nc'"
-export FNALBC2="'C96.facsf.tileX.nc'"
-export FNTG3C="'C96.substrate_temperature.tileX.nc'"
-export FNVEGC="'C96.vegetation_greenness.tileX.nc'"
-export FNVETC="'C96.vegetation_type.tileX.nc'"
-export FNSOTC="'C96.soil_type.tileX.nc'"
-export FNSOCC="'C96.soil_color.tileX.nc'"
-export FNSMCC=${FNSMCC_control}
-export FNMSKH=${FNMSKH_control}
-export FNVMNC="'C96.vegetation_greenness.tileX.nc'"
-export FNVMXC="'C96.vegetation_greenness.tileX.nc'"
-export FNSLPC="'C96.slope_type.tileX.nc'"
-export FNABSC="'C96.maximum_snow_albedo.tileX.nc'"
-export FSICL=0
-export FSICS=0
 
 export IMP_PHYSICS=8
 export LGFDLMPRAD=.false.
@@ -205,9 +191,37 @@ export INPUT_NML=global_control.nml.IN
 
 # RRTMGP
 export DO_RRTMGP=.false.
-export DOGP_LWSCAT=.true.
+export DOGP_LWSCAT=.false.
 
 export SATMEDMF=.true.
+
+export SKEB=0
+export SKEB_TAU=-999.
+export SKEB_LSCALE=-999.
+export SKEBNORM=1
+export SKEB_NPASS=30
+export SKEB_VDOF=5
+export ISEED_SHUM=0
+export SHUM_TAU=-999.
+export SHUM_LSCALE=-999.
+export ISEED_SPPT=0
+export SPPT_TAU=-999.
+export SPPT_LSCALE=-999.
+export SPPT_LOGIT=.true.
+export SPPT_SFCLIMIT=.true.
+export OCNSPPT='0.8,0.4,0.2,0.08,0.04'
+export OCNSPPT_LSCALE='500.E3,1000.E3,2000.E3,2000.E3,2000.E3'
+export OCNSPPT_TAU='2.16E4,2.592E5,2.592E6,7.776E6,3.1536E7'
+export ISEED_OCNSPPT=0
+export EPBL='0.8,0.4,0.2,0.08,0.04'
+export EPBL_LSCALE='500.E3,1000.E3,2000.E3,2000.E3,2000.E3'
+export EPBL_TAU='2.16E4,2.592E5,2.592E6,7.776E6,3.1536E7'
+export ISEED_EPBL=0
+
+export LNDP_TAU=21600
+export LNDP_LSCALE=500000
+export ISEED_LNDP=0
+
 
 if [[ $MACHINE_ID = gaeac6 ]]; then
   TPN=96

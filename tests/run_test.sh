@@ -160,8 +160,11 @@ else
 fi
 
 # Set IAU Global workflow related tags
-if [[ ${GFSv17opn} == .true. ]] || [[ ${GCAFSv1opn} == .true. ]]; then
+if [[ ${GFSv17opn} == .true. ]]; then
     export HIDE_AIAU=' '
+    export HIDE_LIAU='!'
+elif [[ ${GCAFSv1opn} == .true. ]]; then
+    export HIDE_AIAU='!'
     export HIDE_LIAU='!'
 else
     export HIDE_AIAU=' '
