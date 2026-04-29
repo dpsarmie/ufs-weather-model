@@ -95,7 +95,7 @@ export ocn_omp_num_threads=1
 export ice_omp_num_threads=1
 export wav_omp_num_threads=1
 
-if [[ ${MACHINE_ID} = wcoss2 ]]; then
+if [[ ${MACHINE_ID} = wco ]]; then
     INPES=32
     JNPES=64
     BLOCKSIZE=36
@@ -121,17 +121,17 @@ if [[ ${MACHINE_ID} = wcoss2 ]]; then
     RESTART_INTERVAL="6 24 45 78 114 150 186 222 258 294 330 366"
     RESTART_FH="3 21 42 75 111 147 183 219 255 291 327 363"
 else
-    INPES=24
-    JNPES=12
+    INPES=18
+    JNPES=18
     BLOCKSIZE=36
     OCN_tasks=120
     ICE_tasks=80
-    WAV_tasks=2008
+    WAV_tasks=960
     atm_omp_num_threads=4
     med_omp_num_threads=$atm_omp_num_threads
     WRITE_GROUP=4
     WRTTASK_PER_GROUP=192
-    WRITE_DOPOST=.true.
+    WRITE_DOPOST=.false.
 fi
 
 # atm/ocn/ice resolution
